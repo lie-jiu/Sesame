@@ -67,7 +67,7 @@ public class AntMember extends ModelTask {
         modelFields.addField(enableGameCenter = new BooleanModelField("enableGameCenter", "游戏中心 | 签到", false));
         modelFields.addField(merchantSignIn = new BooleanModelField("merchantSignIn", "商家服务 | 签到", false));
         modelFields.addField(merchantKMDK = new BooleanModelField("merchantKMDK", "商家服务 | 开门打卡", false));
-        if (ExtensionsHandle.handleAlphaRequest("enableDeveloperMode")) {
+        if (!ExtensionsHandle.handleAlphaRequest("enableDeveloperMode")) {
             modelFields.addField(virtualProfit = new BooleanModelField("virtualProfit", "网商银行 | 福利金", false));
         }
         return modelFields;
